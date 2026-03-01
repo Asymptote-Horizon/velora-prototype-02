@@ -5,7 +5,6 @@ import { playBackgroundMusic } from '../utils/audioManager'
 const NAV_LINKS = [
   { label: 'About',    id: 'about' },
   { label: 'Tracks',   id: 'tracks' },
-  { label: 'Timeline', id: 'timeline' },
   { label: 'Prizes',   id: 'prizes' },
   { label: 'Judges',   id: 'judges' },
   { label: 'Sponsors', id: 'sponsors' },

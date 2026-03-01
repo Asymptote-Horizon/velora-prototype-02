@@ -361,7 +361,7 @@ export default function Prizes() {
           paddingBottom: '0.2rem',
           marginBottom: '0.4rem',
         }}>
-          ISSUE #04
+          ISSUE #03
         </div>
         <div className="prizes-label-text" style={{
           fontFamily: "'Bangers', cursive",
