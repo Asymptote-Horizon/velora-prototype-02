@@ -1,0 +1,50 @@
+export const timeline = [
+  {
+    phase: '01',
+    title: 'Registrations Open',
+    date: 'TBA',
+    description: 'Your universe awaits. Assemble your team.',
+    status: 'active', // 'upcoming' | 'active' | 'completed'
+    actionWord: 'BEGIN!',
+  },
+  {
+    phase: '02',
+    title: 'Round 1 — PPT/Video Submission',
+    date: 'TBA',
+    description: 'Submit your project idea as a PPT or video. Online round.',
+    status: 'upcoming',
+    actionWord: 'SUBMIT!',
+  },
+  {
+    phase: '03',
+    title: 'Round 1 Results Announced',
+    date: 'TBA',
+    description: 'Shortlisted teams advance to the offline hackathon.',
+    status: 'upcoming',
+    actionWord: 'REVEAL!',
+  },
+  {
+    phase: '04',
+    title: 'Round 2 — 24-Hour Hackathon',
+    date: 'TBA',
+    description: 'Offline at MITAOE, Alandi. Build. Ship. Win.',
+    status: 'upcoming',
+    actionWord: 'HACK!',
+  },
+  {
+    phase: '05',
+    title: 'Judging',
+    date: 'TBA',
+    description: 'Projects evaluated by industry experts.',
+    status: 'upcoming',
+    actionWord: 'JUDGE!',
+  },
+  {
+    phase: '06',
+    title: 'Winners Announced',
+    date: 'TBA',
+    description: 'The multiverse chooses its champions.',
+    status: 'upcoming',
+    actionWord: 'VICTORY!',
+  },
+]

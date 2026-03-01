@@ -1,0 +1,269 @@
+/* ============================================================
+   Velora — Global CSS
+   Design system: Comic book / Spider-Verse aesthetic
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CSS Custom Properties
+   ------------------------------------------------------------ */
+:root {
+  /* Colors */
+  --color-bg:        #0a0a0f;
+  --color-surface:   #13131a;
+  --color-border:    #000000;
+  --color-text:      #f0f0f0;
+  --color-muted:     #888;
+
+  --color-yellow:    #FFE600;   /* CTA button bg, Prizes section bg shift */
+  --color-cyan:      #00f5ff;   /* "1.0" accent, active glow */
+  --color-purple:    #7b2fff;   /* radial gradient core */
+  --color-blue:      #1a1aff;   /* radial gradient outer */
+  --color-red:       #ff2d55;   /* chromatic aberration / Universe-1 primary */
+
+  /* Typography */
+  --font-display:    'Bangers', cursive;
+  --font-body:       'Plus Jakarta Sans', sans-serif;
+
+  /* Comic panel */
+  --panel-border:    3px solid #000;
+  --panel-shadow:    4px 4px 0px #000;
+
+  /* CTA button */
+  --btn-bg:          var(--color-yellow);
+  --btn-border:      3px solid #000;
+  --btn-shadow:      4px 4px 0px #000;
+
+  /* Spacing */
+  --section-pad:     clamp(4rem, 8vw, 8rem);
+}
+
+/* Noir Mode overrides */
+[data-theme="noir"] {
+  --color-primary: #ffffff;
+  --color-accent:  #aaaaaa;
+  --color-yellow:  #ffffff;
+  --color-dark:    #000000;
+  --color-ink:     #111111;
+  --color-bg:      #000;
+  --color-surface: #111;
+  --color-text:    #e0e0e0;
+  --color-cyan:    #aaa;
+  --color-purple:  #555;
+  --color-blue:    #333;
+  filter: grayscale(1) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+
+/* ------------------------------------------------------------
+   Base Reset
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------
+   Hero Countdown responsive
+   ------------------------------------------------------------ */
+.hero-countdown > div {
+  min-width: 80px;
+}
+
+@media (max-width: 440px) {
+  .hero-countdown {
+    gap: 0.25rem;
+    transform: scale(0.82);
+    transform-origin: center top;
+  }
+}
+
+/* ------------------------------------------------------------
+   Halftone Dot Overlay
+   ------------------------------------------------------------ */
+.halftone-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------
+   Comic Panel
+   ------------------------------------------------------------ */
+.comic-panel {
+  border: var(--panel-border);
+  box-shadow: var(--panel-shadow);
+  background-color: var(--color-surface);
+  position: relative;
+}
+
+.comic-panel__number {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------
+   CTA Button (comic style)
+   ------------------------------------------------------------ */
+.btn-comic {
+  display: inline-block;
+  background-color: var(--btn-bg);
+  color: #000;
+  border: var(--btn-border);
+  box-shadow: var(--btn-shadow);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  padding: 0.6rem 1.6rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.1s, box-shadow 0.1s;
+  user-select: none;
+}
+
+.btn-comic:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.btn-comic:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* ------------------------------------------------------------
+   Chromatic Aberration — VELORA wordmark
+   ------------------------------------------------------------ */
+.chromatic {
+  font-family: var(--font-display);
+  color: #fff;
+  text-shadow:
+    -2px  0   0   rgba(255, 0,   60,  0.8),
+     2px  0   0   rgba(0,   245, 255, 0.8),
+     0    2px 0   rgba(120, 0,   255, 0.5);
+}
+
+/* Intensified variant for Hero heading */
+.chromatic--hero {
+  font-size: clamp(5rem, 12vw, 12rem);
+  line-height: 0.9;
+  text-shadow:
+    -4px  0   0   rgba(255, 0,   60,  0.85),
+     4px  0   0   rgba(0,   245, 255, 0.85),
+     0    3px 0   rgba(120, 0,   255, 0.6),
+    -8px  0   0   rgba(255, 0,   60,  0.25),
+     8px  0   0   rgba(0,   245, 255, 0.25);
+}
+
+/* ------------------------------------------------------------
+   Glitch Animation
+   ------------------------------------------------------------ */
+@keyframes glitch {
+  0%   { transform: translate(0); opacity: 0; }
+  2%   { transform: translate(-4px, 2px); opacity: 0.15; }
+  4%   { transform: translate(4px, -2px); opacity: 0.1; }
+  6%   { transform: translate(-2px, -4px); opacity: 0.2; }
+  8%   { transform: translate(0); opacity: 0; }
+  100% { transform: translate(0); opacity: 0; }
+}
+
+.glitch-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    transparent 0%,
+    rgba(0, 245, 255, 0.03) 50%,
+    transparent 100%
+  );
+  animation: glitch 4s infinite;
+  z-index: 10;
+  mix-blend-mode: screen;
+}
+
+/* Full-screen glitch storm (Easter Egg 1) */
+@keyframes glitch-storm {
+  0%   { clip-path: inset(0 0 95% 0); transform: translateX(-5px); }
+  10%  { clip-path: inset(20% 0 60% 0); transform: translateX(5px); }
+  20%  { clip-path: inset(50% 0 30% 0); transform: translateX(-3px); }
+  30%  { clip-path: inset(80% 0 5% 0);  transform: translateX(8px); }
+  40%  { clip-path: inset(10% 0 80% 0); transform: translateX(-8px); }
+  50%  { clip-path: inset(0 0 95% 0);   transform: translateX(0); }
+  100% { clip-path: inset(0 0 95% 0);   transform: translateX(0); }
+}
+
+/* ------------------------------------------------------------
+   Active Timeline — Glowing border pulse
+   ------------------------------------------------------------ */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px 2px var(--color-cyan); }
+  50%       { box-shadow: 0 0 20px 6px var(--color-cyan); }
+}
+
+.panel--active {
+  animation: glow-pulse 2s ease-in-out infinite;
+  border-color: var(--color-cyan) !important;
+}
+
+/* ------------------------------------------------------------
+   Completed Timeline — Stamp overlay
+   ------------------------------------------------------------ */
+.panel--completed::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: rgba(0, 245, 255, 0.15);
+  font-family: var(--font-display);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   Noir Mode — Rain Effect
+   ------------------------------------------------------------ */
+@keyframes rain {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 100vh; }
+}
+
+[data-theme="noir"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 4px,
+    rgba(255,255,255,0.015) 4px,
+    rgba(255,255,255,0.015) 5px
+  );
+  animation: rain 0.5s linear infinite;
+  z-index: 9999;
+}

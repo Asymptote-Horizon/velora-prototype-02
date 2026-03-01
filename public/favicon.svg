@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15.5" fill="#0A0A0A" stroke="#FF2D55" stroke-width="1"/>
+
+  <!-- Spider web lines radiating from center -->
+  <g stroke="#FF2D55" stroke-width="0.5" opacity="0.3">
+    <!-- Cardinal lines -->
+    <line x1="16" y1="16" x2="16" y2="1"/>
+    <line x1="16" y1="16" x2="31" y2="16"/>
+    <line x1="16" y1="16" x2="16" y2="31"/>
+    <line x1="16" y1="16" x2="1" y2="16"/>
+    <!-- Diagonal lines -->
+    <line x1="16" y1="16" x2="27" y2="5"/>
+    <line x1="16" y1="16" x2="27" y2="27"/>
+    <line x1="16" y1="16" x2="5" y2="27"/>
+    <line x1="16" y1="16" x2="5" y2="5"/>
+    <!-- Concentric arc rings (partial) -->
+    <circle cx="16" cy="16" r="5" fill="none"/>
+    <circle cx="16" cy="16" r="9" fill="none"/>
+    <circle cx="16" cy="16" r="13" fill="none"/>
+  </g>
+
+  <!-- Stylized bold V — two thick strokes meeting at a point -->
+  <path
+    d="M7 8 L16 23 L25 8"
+    fill="none"
+    stroke="#FF2D55"
+    stroke-width="4.5"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+  <!-- Inner V highlight for depth -->
+  <path
+    d="M7 8 L16 23 L25 8"
+    fill="none"
+    stroke="#FF2D55"
+    stroke-width="2"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    opacity="0.4"
+  />
+
+  <!-- Cyan dimensional spark — top-right of V -->
+  <circle cx="23.5" cy="9.5" r="1.8" fill="#00D4FF"/>
+  <!-- Spark glow -->
+  <circle cx="23.5" cy="9.5" r="3" fill="none" stroke="#00D4FF" stroke-width="0.5" opacity="0.4"/>
+</svg>
