@@ -315,7 +315,7 @@ export default function Sponsors() {
           paddingBottom: '0.2rem',
           marginBottom: '0.4rem',
         }}>
-          ISSUE #04
+          ISSUE #05
         </div>
         <div style={{
           fontFamily: "'Bangers', cursive",

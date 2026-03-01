@@ -297,7 +297,7 @@ export default function Judges() {
           paddingBottom: '0.2rem',
           marginBottom: '0.4rem',
         }}>
-          ISSUE #05
+          ISSUE #04
         </div>
         <div style={{
           fontFamily: "'Bangers', cursive",
